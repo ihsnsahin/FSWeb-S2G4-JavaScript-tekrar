@@ -36,7 +36,7 @@ const sayilar = [
 */
 
 //Örneğin çözümü:
-function KareninAlani(kenaruzunlugu) {
+function kareninAlani(kenaruzunlugu) {
   return kenaruzunlugu * kenaruzunlugu;
 }
 
@@ -50,8 +50,8 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function cemberinCevresi(yariCap) {
+  return 2 * pi * yariCap
 }
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
@@ -64,9 +64,10 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function cemberinAlani(yariCap) {
+  return pi * yariCap * yariCap
 }
+console.log(cemberinAlani(15));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -88,38 +89,50 @@ function CemberinAlani(/* kodlar buraya */) {
 */
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
+console.log(sayilar);
 
-let ucetambolunenler,
-  enkucuk,
-  enbuyuk,
-  ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
-  siralisayilar,
-  tekraredensayilar;
+
 
 // 3a çözümü
-
-/* kodlar buraya */
+const siralama = sayilar.sort((a,b) => a - b);
+const enbuyuk = siralama[siralama.length-1];
+const enkucuk = siralama[0];
 
 // 3b çözümü:
 
-/* kodlar buraya */
+const ucetambolunenler = sayilar.filter((sayi) => sayi % 3 === 0);
+
 
 // 3c çözümü:
 
-/* kodlar buraya */
+const ucebolunenlerintoplami = uceTamBolunenler.reduce((toplam,yeni) => toplam + yeni, 0)
 
 // 3d çözümü
 
-/* kodlar buraya */
+const besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi < 500);
 
 // 3e çözümü
-
-/* kodlar buraya */
+const siralisayilar = besYuzdenKucukSayilar.sort((a,b) => a - b)
 
 // 3f çözümü
+function frequency(sayilar) {
+const depo = {};
+const tekraredensayilar = []
+for (let i = 0; i < sayilar.length; i++){
+let sayi = sayilar[i];
+  if (depo[sayi] !== undefined) {
+  depo[sayi] += 1
+  } else {
+  depo[sayi] = 1
+  }
+}
+for (let sayi in depo){
+ 
+  tekraredensayilar.push(`${sayi} sayısı ${depo[sayi]} kere tekrar edilmiştir.`)
+}
+  return tekraredensayilar
+}
 
-/* kodlar buraya */
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
